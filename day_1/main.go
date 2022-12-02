@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -83,4 +84,16 @@ func main() {
 	_, max := FindMaxAndMin(outputs)
 
 	fmt.Printf("Elf number %d has to most calories, %d\n", max.Index, max.SumOfCalories)
+
+	var sliceOfSumOfCalories []int
+
+	for _, output := range outputs {
+		sliceOfSumOfCalories = append(sliceOfSumOfCalories, output.SumOfCalories)
+	}
+
+	sort.Ints(sliceOfSumOfCalories)
+
+	sumOfThreeBiggest := sliceOfSumOfCalories[len(sliceOfSumOfCalories)-1] + sliceOfSumOfCalories[len(sliceOfSumOfCalories)-2] + sliceOfSumOfCalories[len(sliceOfSumOfCalories)-3]
+
+	fmt.Printf("The total sum of calories of three elves with carrying most amout of food is equal to %d", sumOfThreeBiggest)
 }
