@@ -1,2 +1,2 @@
-# advent-of-code-2022
-Advent Of Code 2022 all in Golang
+# aoc
+Advent Of Code all in Rust
