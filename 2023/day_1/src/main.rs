@@ -78,8 +78,6 @@ fn combine_digits(first_digit: u32, last_digit: u32) -> u32 {
         .parse::<u32>()
         .unwrap();
 
-    println!("{} + {} = {}", first_digit, last_digit, combined);
-
     combined
 }
 
